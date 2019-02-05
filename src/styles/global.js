@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import 'rc-slider/assets/index.css';
 import { colors } from './colors';
 
 const GlobalStyle = createGlobalStyle`
