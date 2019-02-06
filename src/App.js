@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 
 import GlobalStyle from './styles/global';
 
+import Background from './components/Background';
 import Header from './components/Header';
 import InputSearch from './components/InputSearch';
 import ListCompetitions from './components/ListCompetitions';
@@ -16,6 +17,7 @@ const App = () => (
     <TableScores />
     <SpinnerBall />
     <ListCompetitions />
+    <Background />
   </Fragment>
 );
 

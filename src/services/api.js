@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+export const SECRET = 'football_data_api_token';
+
 const api = axios.create({
-  baseURL: 'https://api.spotify.com/v1/',
+  baseURL: 'api.football-data.org/v2/',
 });
 
 export default api;
