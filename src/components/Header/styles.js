@@ -2,33 +2,34 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 export const Container = styled.header`
-  background: ${colors.success};
   display: flex;
-  padding: 0 20px;
-  justify-content: space-between;
+  padding: 4rem;
+  justify-content: center;
   align-items: center;
   min-height: 5rem;
-  overflow: hidden;
 `;
 export const Logo = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+  margin-left: 3rem;
 
   img {
-    height: 9rem;
+    height: 6rem;
     position: absolute;
-    top: -109%;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -25%);
     opacity: 0.6;
-    transform: translateX(-50%) rotate(-29deg);
     filter: contrast(0);
     mix-blend-mode: luminosity;
   }
 `;
 
 export const Title = styled.h1`
-  margin-left: 8.5rem;
-  color: ${colors.black};
+  margin-left: 3rem;
+  color: ${colors.lighten};
+  opacity: 0.5;
 `;
 
 export const Nav = styled.ul`
