@@ -7,7 +7,7 @@ import Header from './components/Header';
 import InputSearch from './components/InputSearch';
 import ListCompetitions from './components/ListCompetitions';
 import TableScores from './components/TableScores';
-import SpinnerBall from './components/SpinnerBall';
+import Spinner from './components/Spinner';
 
 const App = () => (
   <Fragment>
@@ -15,7 +15,6 @@ const App = () => (
     <Header />
     <InputSearch />
     <TableScores />
-    <SpinnerBall />
     <ListCompetitions />
     <Background />
   </Fragment>

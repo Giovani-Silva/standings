@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
-import Field from '../../assets/field2.jpg';
+import Field from '../../assets/field1.jpg';
 
 export const Container = styled.div`
   width: 100%;

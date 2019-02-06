@@ -17,7 +17,7 @@ export const List = styled.ul`
   justify-content: center;
 
   li {
-    color: ${colors.success}
+    color: ${colors.success};
     background: ${colors.greenTransparent};
     box-shadow: 0px 11px 10px -10px ${colors.success};
     border: 1px solid;
@@ -28,5 +28,6 @@ export const List = styled.ul`
     width: 100%;
     max-width: 25rem;
     height: 4rem;
+    letter-spacing: 1.11px;
   }
 `;

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
+import { Ring } from '../Spinner/styles';
 
-export const Container = styled.div`
+export const Form = styled.form`
   display: flex;
-  margin-top: 2rem;
+  justify-content: center;
+  margin: 2rem;
 
   input[type='text'] {
     font-size: 1em;
@@ -22,6 +24,39 @@ export const Container = styled.div`
     border-radius: 3px;
     transition: all 0.1s;
     color: ${colors.success};
-    margin: 0 auto;
+  }
+
+  button {
+    border: 0;
+    background: ${colors.greenTransparent};
+    color: ${colors.success};
+    border: 1px solid ${colors.success};
+    width: 6rem;
+    margin-left: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      background: ${colors.success};
+      color: ${colors.black};
+      ${Ring} {
+        div {
+          border-color: ${colors.black} transparent transparent transparent;
+        }
+      }
+    }
+
+    ${Ring} {
+      width: 1rem;
+      height: 1rem;
+      div {
+        transition: border-color 0.3s ease-in;
+        border-color: ${colors.success} transparent transparent transparent;
+        width: 1rem;
+        height: 1rem;
+        margin: 0.2rem;
+      }
+    }
   }
 `;

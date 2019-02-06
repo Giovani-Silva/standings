@@ -1,11 +1,13 @@
 import React from 'react';
+import Spinner from '../Spinner';
 
-import { Container } from './styles';
+import { Form } from './styles';
 
 const InputSearch = () => (
-  <Container>
+  <Form>
     <input type="text" placeholder="Campeonato Brasileiro..." />
-  </Container>
+    <button type="button">{<Spinner /> || 'Buscar'}</button>
+  </Form>
 );
 
 export default InputSearch;
