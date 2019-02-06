@@ -1,4 +1,3 @@
-import { MockCompetitions } from '../../services/mock.api';
 /** TYPES */
 export const Types = {
   GET_REQUEST: 'competitions/GET_REQUEST',
@@ -12,6 +11,7 @@ const INITIAL_STATE = {
   filter: [],
   data: [],
 };
+
 export default function competitions(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.GET_REQUEST:
@@ -35,7 +35,7 @@ export default function competitions(state = INITIAL_STATE, action) {
         );
       return {
         ...state,
-        loading: true,
+        loading: false,
         filter: filtered,
       };
     }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 import { colors } from '../../styles/colors';
 
 export const Container = styled.div`
@@ -8,27 +9,35 @@ export const Container = styled.div`
   align-items: flex-start;
 `;
 export const List = styled.ul`
-  width: 100%;
-  margin: 1rem;
+  li {
+    color: ${colors.success};
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 25rem;
+    height: 5rem;
+    letter-spacing: 1.11px;
+  }
+`;
+
+export const Link = styled(RouterLink)`
   list-style: none;
-  padding: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  color: ${colors.success};
+  text-decoration: none;
+  font-weight: 700;
+  background: ${colors.greenTransparent};
+  box-shadow: 0px 11px 10px -10px ${colors.success};
+  border: 1px solid;
+  transition: all .2s ease;
 
-  li {
-    color: ${colors.success};
-    background: ${colors.greenTransparent};
-    box-shadow: 0px 11px 10px -10px ${colors.success};
-    border: 1px solid;
-    margin: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 25rem;
-    height: 4rem;
-    letter-spacing: 1.11px;
+  &:hover {
+    background: ${colors.blackTransparent};
+    border: 2px solid;
+}
   }
 `;
 
