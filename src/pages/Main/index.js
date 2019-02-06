@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
-import { Container } from './styles';
+import { Creators as CompetitionsActions } from '../../store/ducks/competitions';
 
 import InputSearch from '../../components/InputSearch';
 import ListCompetitions from '../../components/ListCompetitions';
-import TableScores from '../../components/TableScores';
 
-const Main = () => (
-  <Container>
-    <InputSearch />
-  </Container>
-);
+import { Container } from './styles';
 
-export default Main;
+class Main extends Component {
+  static propTypes = {
+    competitionsRequest: PropTypes.func.isRequired,
+    competitions: PropTypes.shape({
+      data: PropTypes.array,
+    }).isRequired,
+  };
+
+  componentDidMount() {
+    const { competitionsRequest } = this.props;
+    competitionsRequest();
+  }
+
+  render() {
+    const {
+      competitions: { data },
+    } = this.props;
+    return (
+      <Container>
+        <InputSearch />
+        {/* {!data.length && <p>Nenhuma competição armazenada</p>} */}
+        {data.length && <ListCompetitions />}
+      </Container>
+    );
+  }
+}
+
+const mapStateToProps = ({ competitions }) => ({
+  competitions,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(CompetitionsActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Main);

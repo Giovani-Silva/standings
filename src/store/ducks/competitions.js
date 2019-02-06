@@ -1,16 +1,16 @@
-import { competitions } from '../../services/mock.api';
+import { MockCompetitions } from '../../services/mock.api';
 /** TYPES */
 export const Types = {
-  GET_REQUEST: 'competition/GET_REQUEST',
-  GET_SUCCESS: 'competition/GET_SUCCESS',
+  GET_REQUEST: 'competitions/GET_REQUEST',
+  GET_SUCCESS: 'competitions/GET_SUCCESS',
 };
 
 /** * REDUCER  */
 const INITIAL_STATE = {
   loading: false,
-  data: competitions.competitions,
+  data: [],
 };
-export default function competition(state = INITIAL_STATE, action) {
+export default function competitions(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.GET_REQUEST:
       return { ...state, loading: true };
@@ -19,7 +19,7 @@ export default function competition(state = INITIAL_STATE, action) {
       return {
         ...state,
         loading: false,
-        data: { ...action.payload.data },
+        data: [...action.payload.data],
       };
 
     default:
@@ -29,9 +29,9 @@ export default function competition(state = INITIAL_STATE, action) {
 
 /** * ACTIONS  */
 export const Creators = {
-  competitionRequest: token => ({ type: Types.GET_REQUEST, payload: { token } }),
+  competitionsRequest: () => ({ type: Types.GET_REQUEST }),
 
-  competitionSucess: data => ({
+  competitionsSucess: data => ({
     type: Types.GET_SUCCESS,
     payload: {
       data,

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import competition from './competition';
+import competitions from './competitions';
 
 export default combineReducers({
-  competition,
+  competitions,
 });

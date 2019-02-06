@@ -31,3 +31,22 @@ export const List = styled.ul`
     letter-spacing: 1.11px;
   }
 `;
+
+export const Item = styled.li`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Tag = styled.div`
+  font-size: 0.7em;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: ${colors.success};
+  opacity: 0.7;
+`;
+
+export const Name = styled.div`
+  font-weight: 700;
+`;

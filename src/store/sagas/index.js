@@ -1,8 +1,8 @@
 import { all, takeLatest } from 'redux-saga/effects';
 
-import { Types as CompetitionTypes } from '../ducks/competition';
-import { footballCompetitionRequest } from './competition';
+import { Types as CompetitionsTypes } from '../ducks/competitions';
+import { footballCompetitionsRequest } from './competitions';
 
 export default function* rootSaga() {
-  yield all([takeLatest(CompetitionTypes.GET_REQUEST, footballCompetitionRequest)]);
+  yield all([takeLatest(CompetitionsTypes.GET_REQUEST, footballCompetitionsRequest)]);
 }

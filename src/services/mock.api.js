@@ -1,7 +1,7 @@
 ﻿// api.football-data.org/v2/competitions/BSA/standings
 // X-Auth-Token: f8536c48ab0342d08423842533da56a1
 
-export const standinds = {
+export const MockStandinds = {
   "filters": {},
   "competition": {
     "id": 2013,
@@ -1013,7 +1013,7 @@ export const standinds = {
 }
 
 
-export const competitions = {
+export const MockCompetitions = {
   "count": 147,
   "filters": {},
   "competitions": [
