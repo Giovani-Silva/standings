@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 
-import { Creators as CompetitionActions } from '../ducks/copetition';
+import { Creators as CompetitionActions } from '../ducks/competition';
 
 export function* footballCompetitionRequest(action) {
   try {

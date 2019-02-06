@@ -1,23 +1,23 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './styles/global';
+import store from './store';
+import Routes from './routes';
 
 import Background from './components/Background';
 import Header from './components/Header';
-import InputSearch from './components/InputSearch';
-import ListCompetitions from './components/ListCompetitions';
-import TableScores from './components/TableScores';
-import Spinner from './components/Spinner';
 
 const App = () => (
-  <Fragment>
-    <GlobalStyle />
-    <Header />
-    <InputSearch />
-    <TableScores />
-    <ListCompetitions />
-    <Background />
-  </Fragment>
+  <BrowserRouter>
+    <Provider store={store}>
+      <GlobalStyle />
+      <Header />
+      <Routes />
+      <Background />
+    </Provider>
+  </BrowserRouter>
 );
 
 export default App;

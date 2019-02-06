@@ -1,3 +1,4 @@
+import { competitions } from '../../services/mock.api';
 /** TYPES */
 export const Types = {
   GET_REQUEST: 'competition/GET_REQUEST',
@@ -7,7 +8,7 @@ export const Types = {
 /** * REDUCER  */
 const INITIAL_STATE = {
   loading: false,
-  data: {},
+  data: competitions.competitions,
 };
 export default function competition(state = INITIAL_STATE, action) {
   switch (action.type) {
