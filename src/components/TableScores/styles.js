@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 export const Container = styled.div`
-  width: 100%;
   display: flex;
+  margin: 1rem;
 `;
 
 export const Scores = styled.table`
@@ -11,11 +11,14 @@ export const Scores = styled.table`
   width: 100%;
   max-width: 50rem;
   text-align: center;
-  border: 1px solid ${colors.regular};
+  border: 1px solid ${colors.success};
   border-collapse: collapse;
   tr {
     padding: 0 1rem;
     transition: background 0.3s ease, color 0.5s ease;
+    th {
+      color: ${colors.regular};
+    }
     th:nth-child(3),
     td:nth-child(3) {
       background: ${colors.whiteTransparent};
