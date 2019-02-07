@@ -13,11 +13,14 @@ module.exports = {
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
-    // historyApiFallback: true,
-    historyApiFallback: {
-      index: 'build/index.html',
-    },
+    // contentBase: path.resolve(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'public'),
+    watchContentBase: true,
+    // publicPath: '/',
+    historyApiFallback: true,
+    // historyApiFallback: {
+    //   index: 'build/index.html',
+    // },
     compress: true,
     open: true,
   },
