@@ -5,10 +5,10 @@ import { Creators as StandingsActions } from '../ducks/standings';
 
 export function* footballStandingsRequest(action) {
   try {
-    // const { data } = yield call(api.get, 'competitions/', action.payload, 'standings');
-    const { data } = yield call(api.get, `competitions/${action.payload}/standings`);
-    console.tron.log(data);
-    // yield put(CompetitionsActions.standingsRequestSuccess(data));
+    // Standigs only plan free TIER_ONE, another result in error 403
+    const id = action.payload;
+    const { data } = yield call(api.get, `competitions/${id}/standings`);
+    yield put(StandingsActions.standingsRequestSuccess(data));
   } catch (err) {
     console.tron.error(err);
   }

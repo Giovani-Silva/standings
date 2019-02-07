@@ -8,7 +8,6 @@ export const Types = {
 /** * REDUCER  */
 const INITIAL_STATE = {
   loading: false,
-  selected: [],
   data: [],
 };
 
@@ -18,7 +17,7 @@ export default function standings(state = INITIAL_STATE, action) {
       return { ...state, loading: true };
 
     case Types.GET_SUCCESS:
-      return { ...state, loading: false };
+      return { ...state, loading: false, data: action.payload.data };
 
     default:
       return state;
@@ -28,5 +27,5 @@ export default function standings(state = INITIAL_STATE, action) {
 /** * ACTIONS  */
 export const Creators = {
   standingsRequest: id => ({ type: Types.GET_REQUEST, payload: id }),
-  standingsRequestSuccess: data => ({ type: Types.GET_REQUEST, payload: data }),
+  standingsRequestSuccess: data => ({ type: Types.GET_SUCCESS, payload: { data } }),
 };

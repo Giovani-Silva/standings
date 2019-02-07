@@ -5,7 +5,7 @@ import { Creators as CompetitionsActions } from '../ducks/competitions';
 
 export function* footballCompetitionsRequest(action) {
   try {
-    const { data } = yield call(api.get, 'competitions');
+    const { data } = yield call(api.get, 'competitions/');
     yield put(CompetitionsActions.competitionsSucess(data.competitions));
   } catch (err) {
     console.tron.error(err);
