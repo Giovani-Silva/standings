@@ -8,6 +8,25 @@ export const Types = {
 /** * REDUCER  */
 const INITIAL_STATE = {
   loading: false,
-  filter: [],
+  selected: [],
   data: [],
+};
+
+export default function standings(state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case Types.GET_REQUEST:
+      return { ...state, loading: true };
+
+    case Types.GET_SUCCESS:
+      return { ...state, loading: false };
+
+    default:
+      return state;
+  }
+}
+
+/** * ACTIONS  */
+export const Creators = {
+  standingsRequest: id => ({ type: Types.GET_REQUEST, payload: id }),
+  standingsRequestSuccess: data => ({ type: Types.GET_REQUEST, payload: data }),
 };

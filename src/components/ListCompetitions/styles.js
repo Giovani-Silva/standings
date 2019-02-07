@@ -9,6 +9,10 @@ export const Container = styled.div`
   align-items: flex-start;
 `;
 export const List = styled.ul`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
   li {
     color: ${colors.success};
     margin: 1rem auto;

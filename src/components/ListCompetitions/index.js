@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+
+import { Creators as CompetitionsActions } from '../../store/ducks/competitions';
+import { Creators as StandingsActions } from '../../store/ducks/standings';
 
 import Spinner from '../Spinner';
 import {
@@ -46,6 +50,8 @@ ListCompetitions.propTypes = {
 const mapStateToProps = ({ competitions }) => ({
   competitions,
 });
+
+const mapDispatchToProps = dispatch => bindActionCreators({ CompetitionsActions, StandingsActions }, dispatch);
 
 export default connect(
   mapStateToProps,

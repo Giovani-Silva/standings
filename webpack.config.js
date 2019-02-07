@@ -9,11 +9,15 @@ module.exports = {
   entry: ['regenerator-runtime/runtime', path.resolve(__dirname, 'src', 'index.js')],
   output: {
     path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
-    historyApiFallback: true,
+    // historyApiFallback: true,
+    historyApiFallback: {
+      index: 'build/index.html',
+    },
     compress: true,
     open: true,
   },
