@@ -11,5 +11,10 @@ export function* footballStandingsRequest(action) {
     yield put(StandingsActions.standingsRequestSuccess(data));
   } catch (err) {
     console.tron.error(err);
+    yield put(
+      StandingsActions.standingsRequestError(
+        'The resource you are looking for is restricted amother plan',
+      ),
+    );
   }
 }

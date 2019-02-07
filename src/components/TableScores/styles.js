@@ -3,6 +3,7 @@ import { colors } from '../../styles/colors';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   margin: 1rem;
 `;
 
@@ -13,6 +14,11 @@ export const Scores = styled.table`
   text-align: center;
   border: 1px solid ${colors.success};
   border-collapse: collapse;
+  th:not(:nth-child(2)),
+  td:not(:nth-child(2)) {
+    min-width: 1rem;
+    max-width: 4rem;
+  }
   tr {
     padding: 0 1rem;
     transition: background 0.3s ease, color 0.5s ease;
@@ -26,8 +32,11 @@ export const Scores = styled.table`
   }
   tbody > tr {
     &:hover {
-      background: ${colors.success};
+      background: ${colors.success} !important;
       color: ${colors.black};
+    }
+    &:nth-child(odd) {
+      background: ${colors.whiteTransparent};
     }
   }
 `;

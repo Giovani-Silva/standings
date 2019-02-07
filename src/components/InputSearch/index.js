@@ -7,12 +7,21 @@ import { Creators as CompetitionsActions } from '../../store/ducks/competitions'
 
 import { Form } from './styles';
 
-const InputSearch = ({ competitionsFiltered }) => (
-  <Form>
+const handleInput = (e, competitionsFiltered, clearFiltered) => {
+  e.preventDefault();
+  if (!e.target.value.trim()) {
+    clearFiltered();
+    return;
+  }
+  competitionsFiltered(e.target.value);
+};
+
+const InputSearch = ({ competitionsFiltered, clearFiltered }) => (
+  <Form onSubmit={e => e.preventDefault()}>
     <input
       type="text"
       placeholder="Search Competition"
-      onKeyUp={e => competitionsFiltered(e.target.value)}
+      onChange={e => handleInput(e, competitionsFiltered, clearFiltered)}
     />
   </Form>
 );

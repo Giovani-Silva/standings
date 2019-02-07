@@ -3,6 +3,7 @@ export const Types = {
   GET_REQUEST: 'competitions/GET_REQUEST',
   GET_SUCCESS: 'competitions/GET_SUCCESS',
   GET_FILTER_INPUT: 'competitions/GET_FILTER_INPUT',
+  GET_FILTER_CLEAR: 'competitions/GET_FILTER_CLEAR',
 };
 
 /** * REDUCER  */
@@ -17,12 +18,15 @@ export default function competitions(state = INITIAL_STATE, action) {
     case Types.GET_REQUEST:
       return { ...state, loading: true };
 
+    case Types.GET_FILTER_CLEAR:
+      return { ...state, loading: false, filter: [] };
+
     case Types.GET_SUCCESS:
       return {
         ...state,
         loading: false,
         data: [...action.payload.data],
-        filter: [...action.payload.data],
+        // filter: [...action.payload.data],
       };
 
     case Types.GET_FILTER_INPUT: {
@@ -57,4 +61,6 @@ export const Creators = {
   }),
 
   competitionsFiltered: query => ({ type: Types.GET_FILTER_INPUT, payload: query }),
+
+  clearFiltered: () => ({ type: Types.GET_FILTER_CLEAR }),
 };
