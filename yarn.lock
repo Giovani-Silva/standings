@@ -761,7 +761,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.2.0":
+"@babel/runtime@^7.2.0":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.1.tgz#574b03e8e8a9898eaf4a872a92ea20b7846f6f2a"
   dependencies:
@@ -7675,13 +7675,6 @@ react-scripts@2.1.1:
     workbox-webpack-plugin "3.6.3"
   optionalDependencies:
     fsevents "1.2.4"
-
-react-spring@^8.0.4:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.4.tgz#410da78ddb1f30a4567492288f9be963aa9c3d30"
-  integrity sha512-cNAs+ChoA4ZcUnVzd0KjJpkZCWOQSO82FtvYS6JlCgt4aRvpg7qbeq5ySTzFnAHo02mj0vhqQWf5MVpBZexuYA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
 
 react@^16.6.3:
   version "16.7.0"

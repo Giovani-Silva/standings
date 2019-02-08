@@ -1,5 +1,4 @@
 import React from 'react';
-
 import FootballLogo from '../../assets/football-club.svg';
 import { Container, Logo, Title } from './styles';
 

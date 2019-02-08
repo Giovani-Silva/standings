@@ -1,5 +1,14 @@
 ## ⚽ FoottBall App
 
+![app](Screenshot_1.png)
+Main: Search Competitions
+
+![app](Screenshot_2.png)
+Standings
+
+![app](Screenshot_3.png)
+Standings
+
 API pública chamada football-data.org.
 
 Single page application que aceite um código de competição (Ex: 2013 = Campeonato Brasileiro série A) e apresente uma lista com o ranking da mesma. A lista deve conter:

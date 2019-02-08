@@ -13,13 +13,15 @@ import { Container } from './styles';
 class Main extends Component {
   static propTypes = {
     competitionsRequest: PropTypes.func.isRequired,
+    clearFiltered: PropTypes.func.isRequired,
     competitions: PropTypes.shape({
       data: PropTypes.array,
     }).isRequired,
   };
 
   componentDidMount() {
-    const { competitionsRequest } = this.props;
+    const { competitionsRequest, clearFiltered } = this.props;
+    clearFiltered();
     competitionsRequest();
   }
 
