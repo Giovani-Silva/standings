@@ -30,7 +30,6 @@ class Main extends Component {
     return (
       <Container>
         <InputSearch />
-        {/* {!data.length && <p>Nenhuma competição armazenada</p>} */}
         {!!data.length && <ListCompetitions />}
       </Container>
     );
