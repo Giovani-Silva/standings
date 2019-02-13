@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -72,6 +73,7 @@ module.exports = {
       title: 'Football',
       template: 'src/assets/tpl_index.html',
     }),
+    new Dotenv(),
     new OptimizeCSSAssetsPlugin({}),
   ],
 };
