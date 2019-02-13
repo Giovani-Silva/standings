@@ -82,11 +82,16 @@ class TableScores extends Component {
 
   render() {
     const {
-      standings: { competition },
+      standings: { competition, season },
     } = this.props;
+    const startDate = season.startDate.split('-')[0];
+    const endDate = season.endDate.split('-')[0];
+    const seasonNow = startDate === endDate ? startDate : `${startDate} - ${endDate}`;
+
     return (
       <Container>
         <h3>{`${competition.name} - ${competition.area.name}`}</h3>
+        <h4>{seasonNow}</h4>
         {this.renderTable()}
       </Container>
     );
